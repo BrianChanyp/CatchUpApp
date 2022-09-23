@@ -14,6 +14,7 @@ const TAB_ICON = {
 	Restaurants: "md-restaurant",
 	Map: "md-map",
 	Settings: "md-settings",
+	Friends: "md-people",
 };
 
 const Settings = () => (
@@ -24,6 +25,11 @@ const Settings = () => (
 const Map = () => (
 	<SafeArea>
 		<Text>Map</Text>
+	</SafeArea>
+);
+const Friends = () => (
+	<SafeArea>
+		<Text>Friends</Text>
 	</SafeArea>
 );
 
@@ -47,6 +53,7 @@ export const AppNavigator = () => (
 		>
 			<Tab.Screen name="Restaurants" component={RestaurantsNavigator} />
 			<Tab.Screen name="Map" component={Map} />
+			<Tab.Screen name="Friends" component={Friends} />
 			<Tab.Screen name="Settings" component={Settings} />
 		</Tab.Navigator>
 	</NavigationContainer>
