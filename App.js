@@ -1,7 +1,8 @@
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { ThemeProvider } from "styled-components/native";
 
+//import of google fonts
 import {
 	useFonts as useOswald,
 	Oswald_400Regular,
@@ -16,18 +17,20 @@ import { LocationContextProvider } from "./src/services/location/location.contex
 import { FavouritesContextProvider } from "./src/services/favourites/favourites.context";
 
 export default function App() {
+	//Loading of font Oswald
 	const [oswaldLoaded] = useOswald({
 		Oswald_400Regular,
 	});
 
+	//loading of font Lato
 	const [latoLoaded] = useLato({
 		Lato_400Regular,
 	});
-
 	if (!oswaldLoaded || !latoLoaded) {
 		return null;
 	}
 
+	//return of  the application in layers
 	return (
 		<>
 			<ThemeProvider theme={theme}>
